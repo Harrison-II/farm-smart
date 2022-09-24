@@ -1,5 +1,7 @@
 package com.project.farmsmart.entities;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.sql.Time;
 import java.time.LocalDate;
@@ -14,24 +16,24 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
+    @NotNull
     @Column(name = "title")
     private String title;
-
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "farmer_id")
     private Farmer farmer;
-
+    @NotNull
     @Column(name = "price")
     private Float price;
-
+    @NotNull
     @Column(name = "location")
     private String location;
-
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
-
+    @NotNull
     @Column(name = "created_at")
     private Date createdAt;
 

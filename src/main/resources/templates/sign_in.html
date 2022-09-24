@@ -1,23 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Farm Smart</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" th:href="@{/css/feather.css}">
-  <link rel="stylesheet" th:href="@{/css/themify-icons.css}">
-  <link rel="stylesheet" th:href="@{/css/vendor.bundle.base.css}">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" th:href="@{/css/vertical-layout-light/style.css}">
-  <!-- endinject -->
-  <link rel="shortcut icon" th:href="@{/images/favicon2.png}" />
-</head>
+<head th:replace="fragments :: head_html">
 
 <body>
   <div class="container-scroller">

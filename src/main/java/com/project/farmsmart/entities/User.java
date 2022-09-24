@@ -1,6 +1,10 @@
 package com.project.farmsmart.entities;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
+import java.util.List;
+
 @Entity
 @Table(name = "user")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -9,19 +13,19 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
+    @NotNull
     @Column(name = "username")
     private String username;
-
+    @NotNull
     @Column(name = "user_type")
     public String userType;
-
+    @NotNull
     @Column(name = "phone_number")
     private String phone;
-
-    @Column(name = "email")
+    @NotNull
+    @Column(name = "email", unique = true)
     private String email;
-
+    @NotNull
     @Column(name = "password")
     private String password;
 
@@ -30,6 +34,9 @@ public class User {
 
     @Column(name = "enabled")
     private boolean enabled;
+
+    @OneToMany
+    private List<Notification> notifications;
 
     public User() {
     }
@@ -108,5 +115,13 @@ public class User {
 
     public boolean isEnabled() {
         return enabled;
+    }
+
+    public List<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(List<Notification> notifications) {
+        this.notifications = notifications;
     }
 }

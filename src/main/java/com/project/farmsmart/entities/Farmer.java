@@ -24,6 +24,8 @@ public class Farmer extends User {
     @JoinColumn(name = "speciality", nullable = false)
     private ProductCategory speciality;
 
+
+
     public Farmer() {}
     public List<Product> getProducts() {
         return products;

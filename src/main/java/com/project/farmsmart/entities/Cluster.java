@@ -24,6 +24,9 @@ public class Cluster {
     @ManyToMany(mappedBy = "clusters")
     private List<Buyer> buyers;
 
+    public Cluster() {
+    }
+
     public Cluster(Long id, Float centroidX, Float centroidY, String name) {
         this.id = id;
         this.centroidX = centroidX;

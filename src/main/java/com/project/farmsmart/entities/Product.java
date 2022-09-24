@@ -45,6 +45,22 @@ public class Product {
         return id;
     }
 
+    public Farmer getFarmerID() {
+        return farmerID;
+    }
+
+    public void setFarmerID(Farmer farmerID) {
+        this.farmerID = farmerID;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

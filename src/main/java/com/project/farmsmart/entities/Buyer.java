@@ -26,11 +26,21 @@ public class Buyer extends User {
             inverseJoinColumns = {@JoinColumn(name = "cluster_id")})
     private List<Cluster> clusters;
 
-    @OneToOne(mappedBy = "buyerID")
-    private Connection connection;
+    @OneToMany
+    private List<Connection> connections;
 
     public Buyer(BuyerType buyerType) {
         this.buyerType = buyerType;
+    }
+
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Buyer() {
@@ -41,6 +51,14 @@ public class Buyer extends User {
 
     public void setBuyerType(BuyerType buyerType) {
         this.buyerType = buyerType;
+    }
+
+    public List<Connection> getConnections() {
+        return connections;
+    }
+
+    public void setConnections(List<Connection> connections) {
+        this.connections = connections;
     }
 
     public List<Cluster> getClusters() {

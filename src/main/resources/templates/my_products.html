@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Farm Smart</title>
+</head>
+<body>
+
+
+
+
+
+
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Floating Labels Form -->
+                <form th:action="@{/my_products/{id} (id=${product.id})}" th:object="${product}" method="put" class="row g-3">
+                    <div class="col-md-12">
+                        <div class="form">
+                            <label for="titleEdit">Name</label>
+                            <input type="text" th:href="*{name}" class="form-control" id="titleEdit" name="title" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form">
+                            <label for="authorEdit">Product Category</label>
+                            <input type="text" th:href="*{productCategory}" class="form-control" id="authorEdit" name="author" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form">
+                            <label for="categoryEdit">Product Type</label>
+                            <input type="text" th:href="*{productType}" class="form-control" id="categoryEdit" name="category" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Update</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+                <!-- End floating Labels Form -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Edit Modal-->
+
+<!-- Add Modal -->
+<div class="modal fade" id="addModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Floating Labels Form -->
+                <form th:action="@{/my_products}" th:object="${product}" method="post" class="row g-3">
+                    <div class="col-md-12">
+                        <div class="form">
+                            <label for="title">Name</label>
+                            <input type="text" th:field="*{name}" class="form-control" id="title" name="title" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form">
+                            <label for="author">Product Category</label>
+                            <input type="text" th:href="*{productCategory}" class="form-control" id="author" name="author" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form">
+                            <label for="category">Product Type</label>
+                            <input type="text" th:href="*{productType}" class="form-control" id="category" name="category" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+                <!-- End floating Labels Form -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Add Modal-->
+</body>
+</html>

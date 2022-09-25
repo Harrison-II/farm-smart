@@ -16,11 +16,11 @@ public class Product {
     @Column(name = "name")
     private String name;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "product_category")
     private ProductCategory productCategory;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "product_type")
     private ProductType productType;
 

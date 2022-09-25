@@ -40,7 +40,7 @@ public class UserController {
         return "register";
     }
 
-    @PostMapping("/")
+    @PostMapping("/user")
     public String saveUser(@ModelAttribute("user") User user) {
         userService.saveUser(user);
         if (Objects.equals(user.getUserType(), "Farmer")) {
@@ -50,7 +50,7 @@ public class UserController {
             Buyer buyer = new Buyer();
             buyerService.saveBuyer(buyer);
         }
-        return "redirect:/index";
+        return "redirect:/";
     }
 
     @GetMapping("/user/info/edit/{id}")

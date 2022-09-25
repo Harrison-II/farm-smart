@@ -34,7 +34,7 @@ public class ProductController {
         Product product = new Product();
         model.addAttribute("product", product);
 
-        return "new_product";
+        return "my_products";
     }
 
     @PostMapping("/my_products")

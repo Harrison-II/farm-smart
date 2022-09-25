@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class BuyerController {
 
-    @Autowired
     private final BuyerService buyerService;
 
     public BuyerController(BuyerService buyerService) {

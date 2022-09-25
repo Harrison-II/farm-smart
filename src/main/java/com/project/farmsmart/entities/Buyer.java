@@ -1,9 +1,6 @@
 package com.project.farmsmart.entities;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -11,14 +8,26 @@ import java.util.List;
 @Table(name = "buyers")
 public class Buyer extends User {
 
-    @Id
+
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "buyer_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "buyer_type")
     private BuyerType buyerType;
+
+    @OneToMany(targetEntity = User.class, fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private List<User> users;
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
 
     @ManyToMany
     @JoinTable(name = "buyer_clusters",

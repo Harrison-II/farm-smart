@@ -15,6 +15,9 @@ public class ProductType {
     @Column(name = "name")
     private String name;
 
+    public ProductType() {
+    }
+
     public ProductType(Long id, String name) {
         this.id = id;
         this.name = name;

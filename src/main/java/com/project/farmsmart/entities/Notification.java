@@ -18,11 +18,11 @@ public class Notification {
     @Column(name = "description")
     private String description;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "farmer")
     private Farmer farmer;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "buyer")
     private Buyer buyer;
 

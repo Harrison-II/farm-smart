@@ -16,11 +16,6 @@ public class Pages {
         return "sign_in";
     }
 
-//    @GetMapping("/register")
-//    public String register() {
-//        return "register";
-//    }
-
     @GetMapping("/error_404")
     public String error404() {
         return "error-404";

@@ -1,7 +1,5 @@
 package com.project.farmsmart.entities;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,12 +8,24 @@ import java.util.List;
 @Table(name = "farmers")
 public class Farmer extends User {
 
-    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "farmer_id")
     private Long id;
+
+    @OneToMany(targetEntity = User.class, fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private List<User> users;
+
     @OneToMany(mappedBy = "farmerID")
     private List<Product> products;
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
 
     @OneToMany(mappedBy = "farmer")
     private List<Post> posts;

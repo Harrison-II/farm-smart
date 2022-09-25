@@ -19,11 +19,6 @@ public class ProductCategory {
     @JoinColumn(name = "product_type")
     private ProductType productType;
 
-    @OneToOne
-    private Product product;
-
-
-
     public ProductType getProductType() {
         return productType;
     }
@@ -54,13 +49,5 @@ public class ProductCategory {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
     }
 }
